@@ -10,6 +10,8 @@ import SafariServices
 
 class PeopleViewController: UIViewController {
     
+    // MARK: - View model
+    
     private let viewModel = PeopleViewModel()
     
     // MARK: - UI elements
@@ -38,6 +40,8 @@ class PeopleViewController: UIViewController {
 
 }
 
+// MARK: - PersonCollectionViewCellDelegate
+
 extension PeopleViewController: PersonCollectionViewCellDelegate {
     
     func didTapSubscribe() {
@@ -48,6 +52,8 @@ extension PeopleViewController: PersonCollectionViewCellDelegate {
     }
     
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension PeopleViewController: UICollectionViewDataSource{
     
@@ -64,6 +70,8 @@ extension PeopleViewController: UICollectionViewDataSource{
     }
     
 }
+
+// MARK: - PeopleViewModelDelegate
 
 extension PeopleViewController: PeopleViewModelDelegate {
     
@@ -82,6 +90,10 @@ extension PeopleViewController: PeopleViewModelDelegate {
 private extension PeopleViewController {
     
     func setup() {
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = "People"
+        
         self.view.backgroundColor = .white
         
         self.view.addSubview(collectionView)
