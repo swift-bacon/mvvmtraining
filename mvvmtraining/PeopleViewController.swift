@@ -44,7 +44,9 @@ extension PeopleViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = viewModel.people[indexPath.item]
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PersonCollectionViewCell", for: indexPath) as? PersonCollectionViewCell else { return UICollectionViewCell() }
+        cell.item = item
         return cell
     }
     
