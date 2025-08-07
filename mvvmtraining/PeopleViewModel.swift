@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Delegate
+
 protocol PeopleViewModelDelegate: AnyObject {
     func didFinish()
     func didFail(error: Error)

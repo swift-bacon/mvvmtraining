@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Delegate
+
 protocol PersonCollectionViewCellDelegate: AnyObject {
     func didTapSubscribe()
 }
@@ -24,6 +26,8 @@ class PersonCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Inits
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -34,6 +38,8 @@ class PersonCollectionViewCell: UICollectionViewCell {
     }
     
 }
+
+// MARK: - Setup
 
 private extension PersonCollectionViewCell {
     

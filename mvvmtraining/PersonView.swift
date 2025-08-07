@@ -8,6 +8,8 @@
 import UIKit
 
 class PersonView: UIView {
+    
+    // MARK: - View elements
 
     private lazy var subscribeButton: UIButton = {
         var config = UIButton.Configuration.filled()
@@ -49,6 +51,8 @@ class PersonView: UIView {
     
     private var action: () -> ()
     
+    // MARK: - Inits
+    
     init(action: @escaping () -> ()) {
         self.action = action
         super.init(frame: .zero)
@@ -65,6 +69,8 @@ class PersonView: UIView {
     }
     
 }
+
+// MARK: - Setup
 
 private extension PersonView {
     

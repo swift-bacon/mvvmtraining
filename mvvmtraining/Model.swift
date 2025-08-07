@@ -16,9 +16,3 @@ struct PersonResponse: Codable {
     let firstName: String
     let lastName: String
 }
-
-//"id": 0,
-//      "email": "string",
-//      "first_name": "string",
-//      "last_name": "string",
-//      "avatar": "string"
