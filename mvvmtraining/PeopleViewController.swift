@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class PeopleViewController: UIViewController {
     
@@ -37,6 +38,17 @@ class PeopleViewController: UIViewController {
 
 }
 
+extension PeopleViewController: PersonCollectionViewCellDelegate {
+    
+    func didTapSubscribe() {
+        let url = URL(string: "https://www.youtube.com")!
+        let viewController = SFSafariViewController(url: url)
+        viewController.modalPresentationStyle = .formSheet
+        self.present(viewController, animated: true)
+    }
+    
+}
+
 extension PeopleViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,6 +58,7 @@ extension PeopleViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = viewModel.people[indexPath.item]
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PersonCollectionViewCell", for: indexPath) as? PersonCollectionViewCell else { return UICollectionViewCell() }
+        cell.delegate = self
         cell.item = item
         return cell
     }
